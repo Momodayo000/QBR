@@ -20,7 +20,7 @@
 - そのお店の重要な告知やイベントを確認したい時
 ​
 ## 設計書
-(https://github.com/Momodayo000/QBR/files/13228628/default.pdf)
+  後ほど実装
 ​
 ## 開発環境
 - OS：Linux(CentOS)
