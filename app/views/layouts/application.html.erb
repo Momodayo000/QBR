@@ -41,7 +41,7 @@
 
               <% elsif customer_signed_in? %>
               <li class="nav-item d-flex align-items-center mr-3">
-                ようこそ、<%= link_to customers_mypage_path do %>
+                ようこそ、<%= link_to mypage_customers_path do %>
                 <span>
                   <%= current_customer.last_name %><%= current_customer.first_name %>
                 </span>
@@ -49,7 +49,7 @@
                   さん！
               </li>
               <li class="nav-item">
-                <%= link_to "マイページ", customers_mypage_path, class: 'btn btn-default' %>
+                <%= link_to "マイページ", mypage_customers_path, class: 'btn btn-default' %>
               </li>
               <li class="nav-item">
                 <%= link_to "メニュー一覧", menus_path, class: 'btn btn-default' %>
