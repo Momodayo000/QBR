@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2023_11_04_144148) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_furigana", null: false
+    t.string "first_name_furigana", null: false
+    t.integer "gender", null: false
+    t.string "telephone_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
@@ -37,18 +43,32 @@ ActiveRecord::Schema.define(version: 2023_11_04_144148) do
   end
 
   create_table "menus", force: :cascade do |t|
+    t.string "menu_title", null: false
+    t.string "menu_sub_title", null: false
+    t.text "menu_explanation", null: false
+    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "notices", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "deadline", null: false
+    t.text "explanation", null: false
+    t.float "star", null: false
+    t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.date "day", null: false
+    t.string "time", null: false
+    t.bigint "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "start_time", null: false
+    t.index ["customer_id"], name: "index_reservations_on_customer_id"
   end
 
 end
