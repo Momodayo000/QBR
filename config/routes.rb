@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     end
 
     resources :reservations, only:[:index, :new, :create, :destroy] do
-      get "complete" => "reservations#complete"
+      collection do
+        get "complete" => "reservations#complete"
+      end
     end
 
     resources :menus, only:[:index]
