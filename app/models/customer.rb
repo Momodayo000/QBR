@@ -20,4 +20,6 @@ class Customer < ApplicationRecord
 
   def full_name_furigana = self.last_name_furigana + "　" + self.first_name_furigana
 
+  enum gender: { 男: 0, 女: 1}
+
 end

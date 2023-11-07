@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Menu.create!(
+  menu_title: "カットのみ",
+  menu_sub_title: "cut only",
+  menu_explanation: "カットだけだよ",
+  price: "1200~"
+  )
+
+Admin.create!(
+  email: "sample@gmail.com",
+  password: "adminadmin"
+  )
