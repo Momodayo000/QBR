@@ -9,7 +9,25 @@
   <h3>お知らせ</h3>
   <div class="row">
     <div class="col">
-
+      <table class="table">
+        <thead>
+          <tr>
+            <th>タイトル</th>
+            <th>期限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @notices.first(3).each do |notice| %>
+            <tr>
+              <td><%= notice.title %></td>
+              <td><%= notice.deadline %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-right">
+        <%= link_to "お知らせ一覧へ", admin_notices_path, class:"btn btn-primary" %>
+      </div>
     </div>
   </div>
 </div>
