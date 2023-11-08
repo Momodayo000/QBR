@@ -12,7 +12,7 @@
         <tbody>
           <% @notices.each do |notice| %>
             <tr>
-              <td><%= link_to notice.title, admin_notice_path(notice.id) %></td>
+              <td><%= link_to notice.title, notice_path(notice.id) %></td>
               <td><%= notice.deadline %></td>
             </tr>
           <% end %>

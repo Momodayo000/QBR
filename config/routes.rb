@@ -17,11 +17,9 @@ Rails.application.routes.draw do
 
     resources :menus, only:[:index]
 
-    resources :notices, only:[:index, :create] do
-      collection do
+    resources :notices, only:[:index] do
+      member do
         get "show" => "notices#show"
-        patch "update" => "notices#update"
-        delete "destroy" => "notices#destroy"
       end
     end
   end

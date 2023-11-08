@@ -25,9 +25,11 @@
           <% end %>
         </tbody>
       </table>
-      <div class="text-right">
-        <%= link_to "お知らせ一覧へ", admin_notices_path, class:"btn btn-primary" %>
-      </div>
+      <% if customer_signed_in? %>
+        <div class="text-right">
+          <%= link_to "お知らせ一覧へ", notices_path, class:"btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
