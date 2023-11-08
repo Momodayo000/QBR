@@ -18,7 +18,7 @@ class Public::ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to reservations_path @reservation.id
+      redirect_to complete_reservation_path @reservation.id
     else
       render :new
     end
