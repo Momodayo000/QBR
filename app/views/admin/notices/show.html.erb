@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>お知らせ詳細</h2>
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>タイトル</td>
+          <td><%= @notice.title %></td>
+        </tr>
+
+        <tr>
+          <td>期限</td>
+          <td><%= @notice.deadline %></td>
+        </tr>
+
+        <tr>
+          <td>説明</td>
+          <td><%= @notice.explanation %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

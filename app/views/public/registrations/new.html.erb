@@ -22,11 +22,6 @@
               <td><%= f.text_field :first_name_furigana, placeholder: "ミチコ", class: "form-control" %></td>
             </tr>
             <tr>
-              <td>性別</td>
-              <td><%= f.radio_button :gender, "male" %> 男性</td>
-              <td><%= f.radio_button :gender, "female" %> 女性</td>
-            </tr>
-            <tr>
               <td><%= f.label :email, "メールアドレス", class: "col-form-label" %></td>
               <td></td>
               <td><%= f.email_field :email, autocomplete: "email", placeholder: "sample@example.com", class: "form-control" %></td>

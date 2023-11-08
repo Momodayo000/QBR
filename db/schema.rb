@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2023_11_04_144148) do
     t.string "first_name", null: false
     t.string "last_name_furigana", null: false
     t.string "first_name_furigana", null: false
-    t.integer "gender", null: false
     t.string "telephone_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,8 +54,6 @@ ActiveRecord::Schema.define(version: 2023_11_04_144148) do
     t.string "title", null: false
     t.string "deadline", null: false
     t.text "explanation", null: false
-    t.float "star", null: false
-    t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

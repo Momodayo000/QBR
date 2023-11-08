@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>お知らせ新規登録</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 px-sm-0 mx-auto mb-5">
+      <%= form_with model: @notice, url:admin_notices_path do |f| %>
+      <table>
+        <tr>
+          <div class="form-group">
+            <th><%= f.label :title, "タイトル" %></th>
+            <th><%= f.text_field :title, placeholder:"タイトル名" %></th>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th><%= f.label :deadline, "期限" %></th>
+            <th><%= f.text_field :deadline, placeholder:"11/01から12/31まで" %></th>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th><%= f.label :explanation, "説明" %></th>
+            <th><%= f.text_field :explanation, placeholder:"説明文", size: "50x4" %></th>
+          </div>
+        </tr>
+      </table>
+      　<div class="col-sm-2 mx-auto text-center">
+          <div><%= f.submit "新規登録", class:"btn btn-success" %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

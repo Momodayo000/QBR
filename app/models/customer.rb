@@ -11,7 +11,6 @@ class Customer < ApplicationRecord
     validates :first_name
     validates :last_name_furigana
     validates :first_name_furigana
-    validates :gender
     validates :telephone_number
     validates :email
   end

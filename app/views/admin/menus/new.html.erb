@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>メニュー新規登録</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 px-sm-0 mx-auto mb-5">
+      <%= form_with model: @menu, url:admin_menus_path do |f| %>
+      <table>
+        <tr>
+          <div class="form-group">
+            <th><%= f.label :menu_title, "タイトル" %></th>
+            <th><%= f.text_field :menu_title, placeholder:"タイトル名" %></th>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th><%= f.label :menu_sub_title, "サブタイトル" %></th>
+            <th><%= f.text_field :menu_sub_title, placeholder:"subtitle" %></th>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <th><%= f.label :menu_explanation, "説明" %></th>
+            <th><%= f.text_field :menu_explanation, placeholder:"説明文", size: "50x4" %></th>
+          </div>
+        </tr>
+
+         <tr>
+          <div class="form-group">
+            <th><%= f.label :price, "価格" %></th>
+            <th><%= f.text_field :price, placeholder:"1000" %>円</th>
+          </div>
+        </tr>
+      </table>
+      　<div class="col-sm-2 mx-auto text-center">
+          <div><%= f.submit "新規登録", class:"btn btn-success" %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
