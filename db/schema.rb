@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_04_144148) do
+ActiveRecord::Schema.define(version: 2023_11_09_054404) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 2023_11_04_144148) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "notice_tags", force: :cascade do |t|
+    t.integer "notice_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["notice_id", "tag_id"], name: "index_notice_tags_on_notice_id_and_tag_id", unique: true
+    t.index ["notice_id"], name: "index_notice_tags_on_notice_id"
+    t.index ["tag_id"], name: "index_notice_tags_on_tag_id"
+  end
+
   create_table "notices", force: :cascade do |t|
     t.string "title", null: false
     t.string "deadline", null: false
@@ -68,4 +78,12 @@ ActiveRecord::Schema.define(version: 2023_11_04_144148) do
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "notice_tags", "notices"
+  add_foreign_key "notice_tags", "tags"
 end

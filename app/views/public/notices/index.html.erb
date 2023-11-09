@@ -2,6 +2,17 @@
   <div class="row">
     <div class="col">
       <h2>お知らせ一覧</h2>
+      <div>
+        <% @tag_list.each do |list| %>
+          <%= list.name %>
+          <%="(#{list.notices.count})" %>
+        <% end %>
+      </div>
+      <div>
+        <% @notices.each do |notice| %>
+          <i class="fas fa-tag"><%= notice.tags.map(&:name).join(',') %></i>
+        <% end %>
+      </div>
       <table class="table">
         <thead>
           <tr>

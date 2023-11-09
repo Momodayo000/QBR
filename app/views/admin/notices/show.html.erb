@@ -1,5 +1,10 @@
 <div class="container">
   <div class="row">
+    <div>
+      <% @notice_tags.each do |tag| %>
+        <%=tag.name%><%="(#{tag.notices.count})" %>
+      <% end %>
+    </div>
     <div class="col">
       <h2>お知らせ詳細</h2>
     </div>

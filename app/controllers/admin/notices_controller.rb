@@ -2,10 +2,12 @@ class Admin::NoticesController < ApplicationController
 
   def index
     @notices = Notice.page(params[:page]).per(10).order(created_at: :desc)
+    @tag_list = Tag.all
   end
 
   def show
     @notice = Notice.find(params[:id])
+    @notice_tags = @notice.tags
   end
 
   def new
@@ -14,7 +16,9 @@ class Admin::NoticesController < ApplicationController
 
   def create
     @notice = Notice.new(notice_params)
+    tag_list=params[:notice][:name].split(',')
     if @notice.save
+      @notice.save_tag(tag_list)
       redirect_to admin_notices_path
     else
       render 'new'
