@@ -21,6 +21,9 @@ Rails.application.routes.draw do
       member do
         get "show" => "notices#show"
       end
+      collection do
+        get "search_tag" => "notices#search_tag"
+      end
     end
   end
 
@@ -29,7 +32,11 @@ Rails.application.routes.draw do
 
     resources :menus, only:[:index, :new, :create, :destroy]
 
-    resources :notices, only:[:index, :show, :new, :create, :update, :destroy]
+    resources :notices, only:[:index, :show, :new, :create, :update, :destroy] do
+      collection do
+        get "search_tag" => "notices#search_tag"
+      end
+    end
 
     resources :customers, only:[:index]
 

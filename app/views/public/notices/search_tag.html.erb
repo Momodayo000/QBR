@@ -1,0 +1,12 @@
+<div class="contaier">
+  <div class="row">
+    <div class="col">
+      <h2>タグが<strong><%=@tag.name%></strong>の投稿一覧</h2>
+      <% @tag_list.each do |list|%>
+        <i class="fa-sharp fa-solid fa-tag"></i>
+        <%=link_to list.name, search_tag_notices_path(tag_id: list.id) %>
+        <%="(#{list.notices.count})" %>
+      <% end %>
+    </div>
+  </div>
+</div>

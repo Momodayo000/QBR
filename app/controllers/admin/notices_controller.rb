@@ -31,6 +31,12 @@ class Admin::NoticesController < ApplicationController
   def destroy
   end
 
+  def search_tag
+    @tag_list = Tag.all
+    @tag = Tag.find(params[:tag_id])
+    @notices = @tag.notices
+  end
+
   private
 
     def notice_params

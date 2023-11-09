@@ -4,13 +4,9 @@
       <h2>お知らせ一覧</h2>
       <div>
         <% @tag_list.each do |list| %>
-          <%= list.name %>
+          <i class="fa-sharp fa-solid fa-tag"></i>
+          <%= link_to list.name, search_tag_notices_path(tag_id: list.id) %>
           <%="(#{list.notices.count})" %>
-        <% end %>
-      </div>
-      <div>
-        <% @notices.each do |notice| %>
-          <i class="fas fa-tag"><%= notice.tags.map(&:name).join(',') %></i>
         <% end %>
       </div>
       <table class="table">
