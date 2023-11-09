@@ -8,5 +8,21 @@
         <%="(#{list.notices.count})" %>
       <% end %>
     </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>期限</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @notices.each do |notice| %>
+          <tr>
+            <td><%= link_to notice.title, notice_path(notice.id) %></td>
+            <td><%= notice.deadline %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
