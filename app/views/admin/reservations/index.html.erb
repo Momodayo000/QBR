@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <h2>予約管理画面</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<%= month_calendar events: @reservations, use_full_path: true do |date, appointments| %>
+  <h4><%= date.strftime('%Y-%m-%d') %></h4>
+  <div>
+    <% appointments.each do |reservation| %>
+      <div>
+        <%= reservation.day %>
+          <%= reservation.time %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
