@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :reservations
+  has_many :reviews,dependent: :destroy
 
   with_options presence: do
     validates :last_name

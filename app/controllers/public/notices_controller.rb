@@ -8,6 +8,7 @@ class Public::NoticesController < ApplicationController
   def show
     @notice = Notice.find(params[:id])
     @notice_tags = @notice.tags
+    @review = Review.new
   end
 
   def create

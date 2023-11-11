@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_09_054404) do
+ActiveRecord::Schema.define(version: 2023_11_11_144938) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 2023_11_09_054404) do
     t.index ["customer_id"], name: "index_reservations_on_customer_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "notice_id", null: false
+    t.string "content"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_reviews_on_customer_id"
+    t.index ["notice_id"], name: "index_reviews_on_notice_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -86,4 +97,6 @@ ActiveRecord::Schema.define(version: 2023_11_09_054404) do
 
   add_foreign_key "notice_tags", "notices"
   add_foreign_key "notice_tags", "tags"
+  add_foreign_key "reviews", "customers"
+  add_foreign_key "reviews", "notices"
 end

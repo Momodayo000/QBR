@@ -1,6 +1,7 @@
 class Notice < ApplicationRecord
   has_many :notice_tags,dependent: :destroy
   has_many :tags,through: :notice_tags
+  has_many :reviews,dependent: :destroy
 
   def save_tag(sent_tags)
   # タグが存在していれば、タグの名前を配列として全て取得

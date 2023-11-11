@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       collection do
         get "search_tag" => "notices#search_tag"
       end
+      resources :reviews, only: [:index, :create]
     end
   end
 
