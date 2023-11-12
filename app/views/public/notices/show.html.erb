@@ -51,6 +51,23 @@
             </div>
           </div>
         </div>
+
+        <table class="table is-fullwidth has-text-centered">
+          <thead>
+            <tr>
+              <th>点数</th>
+              <th>内容</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reviews.each do |review| %>
+              <tr>
+                <td><%= review.score %></td>
+                <td><%= review.content %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
         <p class="is-size-4 mb-3">レビューを書く</p>
 
           <div class="rating-box mt-3">
@@ -65,7 +82,6 @@
                 </div>
                 <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
               </div>
-              <%= f.hidden_field :notice, value: notice %>
               <%= f.hidden_field :score, id: "rating-value" %>
               <%= f.text_field :content, class: "textarea" %>
               <%= f.submit "保存", class: "button mt-3" %>
@@ -75,3 +91,5 @@
     </div>
   </div>
 </section>
+
+<%= javascript_include_tag 'reviews.js' %>
