@@ -1,7 +1,7 @@
 class Public::NoticesController < ApplicationController
 
   def index
-    @notices = Notice.page(params[:page]).per(10).order(created_at: :desc)
+    @notices = Notice.page(params[:page]).per(8).order(created_at: :desc)
     @tag_list = Tag.all
   end
 
