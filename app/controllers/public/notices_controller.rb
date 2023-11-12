@@ -9,7 +9,7 @@ class Public::NoticesController < ApplicationController
     @notice = Notice.find(params[:id])
     @notice_tags = @notice.tags
     @review = Review.new
-    @reviews = Review.all
+    @reviews = @notice.reviews
   end
 
   def create
