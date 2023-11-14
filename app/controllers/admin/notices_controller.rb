@@ -8,6 +8,7 @@ class Admin::NoticesController < ApplicationController
   def show
     @notice = Notice.find(params[:id])
     @notice_tags = @notice.tags
+    @reviews = @notice.reviews
   end
 
   def new
