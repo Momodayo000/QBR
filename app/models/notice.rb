@@ -22,4 +22,12 @@ class Notice < ApplicationRecord
       self.tags << new_post_tag
     end
   end
+
+  def avg_score
+    unless self.reviews.empty?
+      reviews.average(:score).round(1).to_f
+    else
+      0.0
+    end
+  end
 end

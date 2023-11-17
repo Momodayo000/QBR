@@ -13,6 +13,7 @@
         <thead>
           <tr>
             <th>タイトル</th>
+            <th></th>
             <th>期限</th>
           </tr>
         </thead>
@@ -20,6 +21,7 @@
           <% @notices.each do |notice| %>
             <tr>
               <td><%= link_to notice.title, notice_path(notice.id) %></td>
+              <td><%= notice.avg_score %>点（<%= notice.reviews.count %>件のレビュー）</td>
               <td><%= notice.deadline %></td>
             </tr>
           <% end %>

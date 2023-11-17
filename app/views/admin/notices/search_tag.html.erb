@@ -1,4 +1,4 @@
-<div class="contaier">
+<div class="container">
   <div class="row">
     <div class="col">
       <h2>タグが<strong><%=@tag.name%></strong>の投稿一覧</h2>
@@ -12,6 +12,7 @@
       <thead>
         <tr>
           <th>タイトル</th>
+          <th></th>
           <th>期限</th>
         </tr>
       </thead>
@@ -19,6 +20,7 @@
         <% @notices.each do |notice| %>
           <tr>
             <td><%= link_to notice.title, admin_notice_path(notice.id) %></td>
+            <td><%= notice.avg_score %>点（<%= notice.reviews.count %>件のレビュー）</td>
             <td><%= notice.deadline %></td>
           </tr>
         <% end %>

@@ -9,11 +9,11 @@
     <% @menus.each do |menu| %>
     <div class="col-sm-4">
       <div class="card" style="width: 18rem;">
-        <div class="card-body">
+        <div class="card-body shadow-lg">
           <h5 class="card-title"><%= menu.menu_title %></h5>
           <h6 class="card-subtitle mb-2 text-body-secondary"><%= menu.menu_sub_title %></h6>
           <p class="card-text"><%= menu.menu_explanation %></p>
-          <p class="card-text"><%= menu.price %></p>
+          <p class="card-text"><%= menu.price %>円</p>
           <div>
             <%= link_to '削除', admin_menu_path(menu.id), method: :delete, data: { confirm: "削除してよろしいですか？", commit: "削除する", cancel: "やめる", title: "ご確認ください" } %>
           </div>

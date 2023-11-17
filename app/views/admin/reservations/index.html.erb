@@ -6,15 +6,19 @@
       </div>
     </div>
   </div>
-</div>
-<%= month_calendar events: @reservations, use_full_path: true do |date, appointments| %>
-  <h4><%= date.strftime('%Y-%m-%d') %></h4>
-  <div>
-    <% appointments.each do |reservation| %>
-      <div>
-        <%= reservation.day %>
-          <%= reservation.time %>
-      </div>
-    <% end %>
+  <div class="row">
+    <div class="col">
+      <%= month_calendar events: @reservations, use_full_path: true do |date, appointments| %>
+        <h4><%= date.strftime('%Y-%m-%d') %></h4>
+          <div>
+            <% appointments.each do |reservation| %>
+              <div>
+                <%= reservation.day %>
+                <%= reservation.time %>
+              </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
