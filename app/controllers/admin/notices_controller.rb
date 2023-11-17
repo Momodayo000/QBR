@@ -30,6 +30,9 @@ class Admin::NoticesController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to admin_notices_path
   end
 
   def search_tag

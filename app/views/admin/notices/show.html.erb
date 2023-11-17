@@ -64,6 +64,7 @@
               <tr>
                 <td><%= review.score %></td>
                 <td><%= review.content %></td>
+                <td><%= link_to '削除', admin_notice_path(review), method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
               </tr>
             <% end %>
           </tbody>
