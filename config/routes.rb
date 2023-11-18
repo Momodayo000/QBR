@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
     resource :customers, only:[:edit, :update] do
       get "mypage" => "customers#show"
-      get "unsubscribe" => "customers#unsubscribe"
-      patch "quit" => "customers#quit"
     end
 
     resources :reservations, only:[:index, :new, :create, :destroy] do
