@@ -6,11 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'dotenv/load'
-
-Admin.find_or_create_by!(email: "sample@gmail.com") do |admin|
-  admin.password = ENV['ADMIN_PASSWORD']
-  puts "Adminのパスワードを設定しました。"
-end
-
-puts admin.inspect
+Admin.create!(
+  email: "sample@gmail.com",
+  password: "adminadmin"
+  )
