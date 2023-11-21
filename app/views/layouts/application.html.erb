@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <header>
+    <header class="top-header">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand p-3" href="/">QBR</a>
@@ -86,7 +86,9 @@
     </main>
 
     <footer>
-
+      <%= link_to root_path, class: 'btn btn-default' do %>
+        <i class="fa-solid fa-house"></i>
+      <% end %>
     </footer>
   </body>
 </html>
