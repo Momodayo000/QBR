@@ -3,6 +3,10 @@ class Notice < ApplicationRecord
   has_many :tags,through: :notice_tags
   has_many :reviews,dependent: :destroy
 
+  validates :title, presence: true
+  validates :deadline, presence: true
+  validates :explanation, presence: true
+
   def save_tag(sent_tags)
   # タグが存在していれば、タグの名前を配列として全て取得
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
