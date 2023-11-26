@@ -1,5 +1,7 @@
 class Public::CustomersController < ApplicationController
 
+  before_action :ensure_guest_customer, only:[:edit, :update]
+
   def show
     @customer = Customer.find(current_customer.id)
     @customer_reservations = current_customer.reservations.where("start_time >= ?", DateTime.current).order(day: :desc)
@@ -29,5 +31,12 @@ class Public::CustomersController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:last_name, :first_name, :last_name_furigana, :first_name_furigana, :telephone_number, :email, :start_time)
+  end
+
+  def ensure_guest_customer
+    @customer = Customer.find(current_customer.id)
+    if @customer.guest_customer?
+      redirect_to root_path
+    end
   end
 end

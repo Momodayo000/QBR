@@ -13,7 +13,7 @@ class Admin::MenusController < ApplicationController
     if @menu.save
       redirect_to admin_menus_path
     else
-      @menus = Menu.all
+      @menus = Menu.page(params[:page]).per(6)
       render 'index'
     end
   end

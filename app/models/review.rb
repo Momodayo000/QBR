@@ -3,4 +3,5 @@ class Review < ApplicationRecord
   belongs_to :notice
 
   validates :score, presence: true
+  validates :content, presence: true
 end

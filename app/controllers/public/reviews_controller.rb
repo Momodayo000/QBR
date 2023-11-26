@@ -8,10 +8,10 @@ class Public::ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.customer_id = current_customer.id
     @review.notice_id = @notice.id
-    if @review.save!
+    if @review.save
       redirect_to notice_path(@review.notice)
     else
-      render "index"
+      redirect_to notice_path(@review.notice)
     end
   end
 
